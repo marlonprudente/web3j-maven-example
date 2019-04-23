@@ -23,3 +23,6 @@ brew install web3j
 
 ## Wallet Gist
 https://gist.github.com/JacqMT/a4fa17725a6bb5f52e8bd30478f8ebbd
+
+
+veja em tutorial/tutorial.txt

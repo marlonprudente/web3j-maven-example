@@ -8,7 +8,7 @@ import org.web3j.protocol.http.HttpService;
 public class VersionFinder {
     public static void main(String[] args) throws Exception {
         // Create Web3j client. The below will default to http://localhost:8545
-        Web3j web3j = Web3j.build(new HttpService());
+        Web3j web3j = Web3j.build(new HttpService("http://localhost:7545"));
         NetVersion netVersion = web3j.netVersion().send();
         Web3ClientVersion clientVersion = web3j.web3ClientVersion().send();
 

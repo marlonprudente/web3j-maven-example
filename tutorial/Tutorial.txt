@@ -1,0 +1,41 @@
+Instale o maven o Solidity e o web3j no diretório C:\
+Instale o Ganache Ethereum
+Coloque o caminho em PATH, para poder usar no prompt do windows
+Para gerar os arquivos java, configure o pom.xml da seguinte  dentro do campo <plugins> forma:
+
+<plugin>
+                <groupId>org.web3j</groupId>
+                <artifactId>web3j-maven-plugin</artifactId>
+                <version>4.2.0</version>
+                <configuration>
+                    <packageName>org.web3j.example.generated</packageName>
+                    <sourceDestination>src/main/java</sourceDestination>
+                    <nativeJavaType>true</nativeJavaType>
+                    <outputFormat>java,bin</outputFormat>
+                    <soliditySourceFiles>
+                        <directory>contracts/solidity</directory>
+                        <includes>
+                            <include>**/*.sol</include>
+                        </includes>
+                    </soliditySourceFiles>
+                    <outputDirectory>
+                        <java>src/main/java</java>
+                        <bin>contracts/build</bin>
+                        <abi>contracts/build</abi>
+                    </outputDirectory>
+                    <contract>
+                        <includes>
+                            <include>Greeter</include>
+<!--                            <include>World</include>-->
+                        </includes>
+                        <excludes>
+                            <exclude>Mortal</exclude>
+                        </excludes>
+                    </contract>
+                </configuration>
+            </plugin>
+
+
+
+entre na pasta do projeto e execute o comando:
+mvn web3j:generate-sources
